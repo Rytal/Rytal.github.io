@@ -1,0 +1,46 @@
+.foot1{
+    display: grid;
+    grid-auto-flow: column;
+    background-color: #2D3F45;
+    height: 76px;
+    align-items: center;
+    gap: 150px;
+    padding-left: 150px;
+    padding-right: 80px;
+}
+
+.elements{
+    display: grid;
+    grid-auto-flow: column;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 142.7%;
+    color: white;
+}
+
+.soz{
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.soz img{
+    width: 32px;
+    height: 32px;
+}
+
+.foot2{
+    display: grid;
+    text-align: center;
+    background-color: #324950;
+    height: 51px;
+    align-items: center;
+}
+
+.text2{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 142.7%;
+    color: #B9B9B9;
+}
