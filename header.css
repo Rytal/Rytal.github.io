@@ -93,5 +93,5 @@
 }
 
 .image a {
-    display: inline-block;  /* ссылка занимает только размер картинки */
+    display: inline-block;
 }
