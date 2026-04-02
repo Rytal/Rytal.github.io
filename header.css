@@ -85,3 +85,13 @@
     color: white;
     border: none;
 }
+
+.box3{
+    text-decoration: none;
+    color: #324950;
+    cursor: pointer;
+}
+
+.image a {
+    display: inline-block;  /* ссылка занимает только размер картинки */
+}
