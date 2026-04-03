@@ -1,0 +1,282 @@
+.white{
+    display: flex;
+    flex-direction: column;
+    height: 122px;
+}
+.test{
+    height: 480px;
+
+    background-image: url(img-41.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.top-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: 100%;
+    
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: right;
+    color: #324950;
+    padding-right: 60px;
+}
+
+.image{
+    margin-right: auto;
+    margin-left: 10%;
+    margin-top: 20px;
+}
+
+.right-block{
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    gap: 294px;
+    width: 370px;
+    border-bottom: 2px solid #324950;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    margin-left: auto;
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #324950;
+}
+
+.menu{
+    display: flex;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.box1, .box6{
+    text-decoration: none;
+    color: #324950;
+    cursor: pointer;
+}
+
+.foot1{
+    display: grid;
+    grid-auto-flow: column;
+    background-color: #2D3F45;
+    height: 76px;
+    align-items: center;
+    gap: 150px;
+    padding-left: 150px;
+    padding-right: 80px;
+}
+
+.elements{
+    display: grid;
+    grid-auto-flow: column;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 142.7%;
+    color: white;
+}
+
+.soz{
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.soz img{
+    width: 32px;
+    height: 32px;
+}
+
+.foot2{
+    display: grid;
+    text-align: center;
+    background-color: #324950;
+    height: 51px;
+    align-items: center;
+}
+
+.text2{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 142.7%;
+    color: #B9B9B9;
+}
+
+.haupt-block {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    gap: 125px;
+    padding-top: 50px;
+    background-color: #EDEDED;
+}
+
+.r-block{
+    padding-top: 148px;
+}
+
+.left-block input{
+    width: 350px;
+    height: 55px;
+    border-radius: 10px;
+    margin-top: 11px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+input[name="if_other"]{
+    width: 655px;
+    height: 55px;
+    border-radius: 10px;
+}
+
+textarea[name="you_are_int"]{
+    width: 655px;
+    height: 390px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 11px;
+    margin-bottom: 15px;
+}
+
+input[name="code"]{
+    width: 225px;
+    height: 55px;
+    border-radius: 10px;
+}
+
+.r-block input{
+    border-radius: 10px;
+    margin-top: 11px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc; 
+}
+
+.code-icon{
+    width: 90px;
+    height: 25px;
+}
+
+.code-button{
+    width: 255px;
+    height: 55px;
+
+    background: #57984C;
+    border-radius: 60px;
+    border: none;
+    margin-left: 76px;
+
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 200%;
+    color: #FFFFFF;
+}
+
+.bottom{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+    text-align: center;
+
+    color: #324950;
+}
+
+.cr{
+    width: 47px;
+    height: 6px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.zag{
+    width: 221px;
+    height: 63px;
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 142.7%;
+    color: #324950;
+}
+
+.txt{
+    height: 26px;
+
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+    color: #324950;
+}
+
+.address-title {
+    display: inline-block;
+    border-bottom: 1px solid #57984C;
+    font-family: 'Roboto Slab';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 142.7%;
+    width: 183px;
+    margin: auto;
+    color: #57984C;
+    padding-bottom: 12px;
+}
+
+.bottom strong{
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+    text-align: center;
+
+    color: #57984C;
+}
+
+.you-are-select {
+    width: 655px;
+    height: 55px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 0 8px;
+    font-size: 16px;
+    font-family: inherit;
+    background-color: white;
+    cursor: pointer;
+    margin-top: 11px;
+    margin-bottom: 15px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;  
+}
+
+.bottom div{
+    padding-top: 17px;
+}

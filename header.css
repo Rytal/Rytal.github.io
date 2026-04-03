@@ -86,12 +86,11 @@
     border: none;
 }
 
-.box3{
+.box1, .box6, .box3{
     text-decoration: none;
     color: #324950;
     cursor: pointer;
 }
-
 .image a {
-    display: inline-block;
+    display: inline-block;  /* ссылка занимает только размер картинки */
 }

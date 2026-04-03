@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="page3.css">
+    <link rel="stylesheet" href="page4.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta charset="UTF-8">
     <title>FORM</title> 
@@ -19,7 +19,7 @@
             </div>
             <div class="rigth-block">
                 <div class="search">
-                    <div class="ers">Search</div>
+                    <div class="erst">Search</div>
                     <div><img src="find.png"></div>
                 </div>
                 <div class="menu">
@@ -33,60 +33,53 @@
             </div>
         </div>
     </div>
+    <div class="test"></div>
 </header>
-<body style="background-color: #E5E5E5;">
-    <div class="b"><img src="row.png" class="r"> Return to all tomatoes</div>
-    <div class="page-layout">
-        <div class="left-col">
-            <div class="product-info">
-                <div class="zag">TAG 1002 TAG(809) <br> <strong>Tomato Determinate <br>Red Standard Round</strong></div>
-                <div class="im"><img src="cr.png" width="47px" height="6px"></div>
-                <div class="yield-block">
-                    <div><img src="logot.png" width="80px" height="80px"></div>
-                    <div>Very high yield and <br>excellent fruits quality!</div>
-                </div>
-                <div>
-                    <div class="erst">CHARACTERISTICS</div>
-                    <div class="t">Resistance</div>
-                    <div class="p">HR: ToMV:0-2; Fol: 1,2; Ve/Vd; </div>
-                    <div class="p">IR: TYLCV</div>
-                </div>
+<body>
+    <div class="haupt-block">
+        <div class="left-block">
+            <div class="zag">Contact us</div>
+            <div><img src="cr.png" class="cr"></div>
+            <div class="txt">Name<sup>*</sup></div>
+            <input type="text" name="name" />
+            <div class="txt">Company name</div>
+            <input type="text" name="cn" />
+            <div class="txt">Position</div>
+            <input type="text" name="position" />
+            <div class="txt">City</div>
+            <input type="text" name="city" />
+            <div class="txt">Country</div>
+            <input type="text" name="country" />
+            <div class="txt">Telephone</div>
+            <input type="text" name="telephone" />
+            <div class="txt">Email<sup>*</sup></div>
+            <input type="text" name="email" />
+        </div>
+        <div class="r-block">
+            <div class="txt">You are a</div>
+            <select name="you_are" class="you-are-select">
+                <option value="" disabled selected>Select</option>
+                <option value="option1">seed producer</option>
+                <option value="option2">other</option>
+            </select>
+            <div class="txt">If other, please specify</div>
+            <input type="text" name="if_other" />
+            <div class="txt">You are interested in</div>
+            <textarea name="you_are_int"></textarea>
+            <div class="txt">Please type this code</div>
+            <div class="code-container">
+                <img src="code.png" alt="code icon" class="code-icon">
+                <input type="text" name="code" class="code-input">
+                <button class="code-button">Send Message</button>
             </div>
         </div>
-        <div class="right-col">
-            <img src="imt.png" width="540px" height="498px">
-            <button class="but"><img src="pdf.png" width="28px" height="32px"> Download PDF</button>
-        </div>
     </div>
-    <div class="char-grid">
-       <div class="char-block">
-            <div class="erst">Plant</div>
-            <ul class="features">
-                <li>Strong vigor that provides good leaf coverage.</li>
-                <li>Very high productivity with good fruit setting.</li>
-                <li>Early matured variety.</li>
-            </ul>
-        </div>
-        <div class="char-block">
-            <div class="erst">Cycle</div>
-            <ul class="features">
-                <li>Spring</li>
-                <li>Fall</li>
-                <li>Winter</li>
-            </ul>
-        </div>
-        <div class="char-block">
-            <div class="erst">Fruit</div>
-            <ul class="features">
-                <li>Long shelf life on plant and post harvest.</li>
-                <li>Nice shiny attractive deep red color.</li>
-                <li>Average fruit size: 140 – 160 grams.</li>
-            </ul>
-        </div>
-        <div>
-            <div class="erst">Color</div>
-            <div class="p">Red</div>
-        </div>
+    <div class="bottom">
+        <div class="address-title">Our Address</div>
+        <div>AGRIDERA Seeds & Agriculture Ltd.</div>
+        <div>P.O Box 103,</div>
+        <div>Gedera 70750 Israel.</div>
+        <div>Telephone: <strong>+972 8 944 9222</strong></div>
     </div>
 </body>
 <footer>
