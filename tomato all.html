@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="page2.css">
+    <link rel="stylesheet" href="tomato all.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <meta charset="UTF-8">
-    <title>Ківі - каталог</title> 
+    <title>FORM</title> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">  
@@ -26,7 +25,7 @@
                 <div class="menu">
                     <a href="index.html" class="box1">Home</a>
                     <div class="box2">Company Profile</div>
-                    <a href="index2.html" class="box3">Products</a>
+                    <a href="tomato all.html" class="box3">Products</a>
                     <div class="box4">Services</div>
                     <div class="box5">P & D</div>
                     <a href="index4.html" class="box6">Contact</a>
@@ -36,10 +35,10 @@
     </div>
     <div class="test"></div>
 </header>
-<body style="background-color: #d3fed1;">
+<body style="background-color: #FCF0F0;">
     <div class="text1">
         <div class="zag1">
-            <div>Kiwis</div>
+            <div>Agridera Fresh Market Tomato Hybrids</div>
         </div>
         <div>
             <img class="im1" src="cr.png">
@@ -95,21 +94,80 @@
     <div class="snos2">
         <div>Agridera operates through international and local distributers around the world.</div>
     </div>
-
-    <div id="article">
-        <div class="images">
-            <div v-for="product in products" :key="product.id" class="kartinka" :class="'kartinka' + product.id">
-                <a :href="'index3.html#' + product.id">
-                    <img style="width: 350px; height: 321px;" :src="'./img/' + product.image" :alt="product.title">
-                    <div class="tm">
-                        <div class="p">{{ product.title }}</div>
-                        <div class="t">{{ product.short_text }}</div>
-                    </div>
-                </a>
-            </div>
+    <div class="images">
+        <div class="kartinka1">
+            <a href="tomato one.html">
+                <img  style="width: 350px; height: 321px;" src="tomat1.png">
+                <div class="tm">
+                    <div class="p">TAG 1000 (TAG 853)</div>
+                    <div class="t">Tomato Determinate Red Standard Round</div>
+                </div>
+            </a>
+        </div>
+        <div class="kartinka2">
+            <a href="tomato one.html">
+                <img  style="width: 350px; height: 321px;" src="tomat2.png">
+                <div class="tm">
+                    <div class="p">TAG 1001 (TAG 855)</div>
+                    <div class="t">Tomato Determinate Red Standard Round</div>
+                </div>
+            </a>
+        </div>
+        <div class="kartinka3">
+            <a href="tomato one.html">
+                <img  style="width: 350px; height: 321px;" src="tomat3.png">
+                <div class="tm">
+                    <div class="p">TAG 1002 (TAG 809)</div>
+                    <div class="t">Tomato Determinate Red Standard Round</div>
+                </div>
+            </a>
+        </div>
+        <div class="kartinka4">
+            <a href="tomato one.html">
+                <img  style="width: 350px; height: 321px;" src="tomat4.png">
+                <div class="tm">
+                    <div class="p">TAG 1003 (TAG 834 )</div>
+                    <div class="t">Tomato Determinate Red Standard Round</div>
+                </div>
+            </a>
+        </div>
+        <div class="kartinka5">
+            <a href="tomato one.html">
+                <img  style="width: 350px; height: 321px;" src="tomat5.png">
+                <div class="tm">
+                    <div class="p">TAG 1004 (TAG 848)</div>
+                    <div class="t">Tomato Determinate Red BEEF Round</div>
+                </div>
+            </a>
+        </div>
+        <div class="kartinka6">
+            <a href="tomato one.html">
+                <img  style="width: 350px; height: 321px;" src="tomat6.png">
+                <div class="tm">
+                    <div class="p">TAG 1005 (TAG 800)</div>
+                    <div class="t">Tomato Determinate Red Standard Round</div>
+                </div>
+            </a>
+        </div>
+        <div class="kartinka7">
+            <a href="tomato one.html">
+                <img  style="width: 350px; height: 321px;" src="tomat7.png">
+                <div class="tm">
+                    <div class="p">TAG 1006 (TAG 898)</div>
+                    <div class="t">Tomato Determinate Red Standard Round</div>
+                </div>
+            </a>
+        </div>
+        <div class="kartinka8">
+            <a href="tomato one.html">
+                <img  style="width: 350px; height: 321px;" src="tomat8.png">
+                <div class="tm">
+                    <div class="p">TAG 1007 (TAG 816)</div>
+                    <div class="t">Tomato Determinate Red Elongated</div>
+                </div>
+            </a>
         </div>
     </div>
-
 </body>
 <footer>
     <div class="foot1">
@@ -134,7 +192,4 @@
         <div class="text2">AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</div>
     </div>
 </footer>
-
-<script src="js/main.js"></script>
-
 </html>

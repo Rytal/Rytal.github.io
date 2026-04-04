@@ -3,8 +3,9 @@
 <head>
     <link rel="stylesheet" href="page3.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <meta charset="UTF-8">
-    <title>FORM</title> 
+    <title>Ківі - деталі товару</title> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">  
@@ -25,7 +26,7 @@
                 <div class="menu">
                     <a href="index.html" class="box1">Home</a>
                     <div class="box2">Company Profile</div>
-                    <div class="box3">Products</div>
+                    <a href="index2.html" class="box3">Products</a>
                     <div class="box4">Services</div>
                     <div class="box5">P & D</div>
                     <a href="index4.html" class="box6">Contact</a>
@@ -35,57 +36,82 @@
     </div>
 </header>
 <body style="background-color: #E5E5E5;">
-    <div class="b"><img src="row.png" class="r"> Return to all tomatoes</div>
-    <div class="page-layout">
-        <div class="left-col">
-            <div class="product-info">
-                <div class="zag">TAG 1002 TAG(809) <br> <strong>Tomato Determinate <br>Red Standard Round</strong></div>
-                <div class="im"><img src="cr.png" width="47px" height="6px"></div>
-                <div class="yield-block">
-                    <div><img src="logot.png" width="80px" height="80px"></div>
-                    <div>Very high yield and <br>excellent fruits quality!</div>
+    <div id="article">
+        <div class="b">
+            <a href="catalog.html" style="text-decoration: none; color: #57984C;">
+                <img src="row.png" class="r"> Return to all kiwis
+            </a>
+        </div>
+
+        <div v-if="product.length > 0">
+            <div class="page-layout">
+                <div class="left-col">
+                    <div class="product-info">
+                        <div class="zag">
+                            {{ product[0].title }} <br> 
+                            <strong>{{ product[0].short_text }}</strong>
+                        </div>
+                        <div class="im"><img src="cr.png" width="47px" height="6px"></div>
+                        <div class="yield-block">
+                            <div><img src="logot.png" width="80px" height="80px"></div>
+                            <div>Високий вміст вітамінів<br>та чудовий смак!</div>
+                        </div>
+                        <div>
+                            <div class="erst">ХАРАКТЕРИСТИКИ</div>
+                            <div class="t">Сорт</div>
+                            <div class="p">{{ product[0].title }}</div>
+                            <div class="t">Опис</div>
+                            <div class="p">{{ product[0].desc }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-col">
+                    <img :src="'./img/' + product[0].image" width="540px" height="498px" :alt="product[0].title">
+                    
+                    <button class="but" @click="addToCart(product[0].id)" v-if="btnVisible === 0">
+                        <img src="pdf.png" width="28px" height="32px"> Add to cart
+                    </button>
+                    
+                    <button class="but" @click="goToCart" v-if="btnVisible === 1">
+                        Go to cart
+                    </button>
+                </div>
+            </div>
+            <div class="char-grid">
+                <div class="char-block">
+                    <div class="erst">Рослина</div>
+                    <ul class="features">
+                        <li>Сильна енергія росту, гарне листя.</li>
+                        <li>Висока врожайність.</li>
+                        <li>Ранньостиглий сорт.</li>
+                    </ul>
+                </div>
+                <div class="char-block">
+                    <div class="erst">Цикл</div>
+                    <ul class="features">
+                        <li>Весна</li>
+                        <li>Осінь</li>
+                        <li>Зима</li>
+                    </ul>
+                </div>
+                <div class="char-block">
+                    <div class="erst">Плід</div>
+                    <ul class="features">
+                        <li>Тривалий термін зберігання.</li>
+                        <li>Привабливий блискучий зелений колір.</li>
+                        <li>Середній розмір: 80 – 120 грам.</li>
+                    </ul>
                 </div>
                 <div>
-                    <div class="erst">CHARACTERISTICS</div>
-                    <div class="t">Resistance</div>
-                    <div class="p">HR: ToMV:0-2; Fol: 1,2; Ve/Vd; </div>
-                    <div class="p">IR: TYLCV</div>
+                    <div class="erst">Колір</div>
+                    <div class="p">Зелений</div>
                 </div>
             </div>
         </div>
-        <div class="right-col">
-            <img src="imt.png" width="540px" height="498px">
-            <button class="but"><img src="pdf.png" width="28px" height="32px"> Download PDF</button>
-        </div>
-    </div>
-    <div class="char-grid">
-       <div class="char-block">
-            <div class="erst">Plant</div>
-            <ul class="features">
-                <li>Strong vigor that provides good leaf coverage.</li>
-                <li>Very high productivity with good fruit setting.</li>
-                <li>Early matured variety.</li>
-            </ul>
-        </div>
-        <div class="char-block">
-            <div class="erst">Cycle</div>
-            <ul class="features">
-                <li>Spring</li>
-                <li>Fall</li>
-                <li>Winter</li>
-            </ul>
-        </div>
-        <div class="char-block">
-            <div class="erst">Fruit</div>
-            <ul class="features">
-                <li>Long shelf life on plant and post harvest.</li>
-                <li>Nice shiny attractive deep red color.</li>
-                <li>Average fruit size: 140 – 160 grams.</li>
-            </ul>
-        </div>
-        <div>
-            <div class="erst">Color</div>
-            <div class="p">Red</div>
+
+        <div v-else style="text-align: center; padding: 50px;">
+            <h2>Товар не обрано</h2>
+            <p>Будь ласка, перейдіть до <a href="catalog.html">каталогу</a> та виберіть ківі.</p>
         </div>
     </div>
 </body>
@@ -112,4 +138,7 @@
         <div class="text2">AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</div>
     </div>
 </footer>
+
+<script src="js/main.js"></script>
+
 </html>
