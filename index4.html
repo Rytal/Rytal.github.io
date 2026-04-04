@@ -37,9 +37,7 @@
     <div class="test"></div>
 </header>
 <body>
-    <!-- Контейнер Vue -->
     <div id="article">
-        <!-- Таблиця кошика (показується тільки якщо є товари) -->
         <div class="cart-section" v-if="cart.length > 0">
             <div class="zag">Your Cart</div>
             <div><img src="cr.png" class="cr"></div>
@@ -63,7 +61,6 @@
             </table>
         </div>
 
-        <!-- Форма замовлення або повідомлення після відправки -->
         <div v-if="!orderSubmitted">
             <div class="zag">Contact us</div>
             <div><img src="cr.png" class="cr"></div>
