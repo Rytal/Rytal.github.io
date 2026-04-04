@@ -8,12 +8,28 @@ var app = new Vue({
       { id: 4, title: "Джем із ківі", short_text: 'Густий та ароматний', image: 'kiwi4.jpg', desc: "Ідеальний до тостів." },
       { id: 5, title: "Органічний ківі", short_text: 'Вирощений без хімії', image: 'kiwi5.jpg', desc: "Сертифікований еко-продукт." }
     ],
-    product: [],
-    btnVisible: 0
+    product: [],          // для детальної сторінки
+    btnVisible: 0,        // для детальної сторінки
+    cart: [],             // масив товарів у кошику (об'єкти)
+    contactFields: {      // поля форми
+      name: '',
+      company: '',
+      position: '',
+      city: '',
+      country: '',
+      telephone: '',
+      email: '',
+      youAre: '',
+      otherSpecify: '',
+      interest: '',
+      code: ''
+    },
+    orderSubmitted: false // чи показано підтвердження замовлення
   },
   mounted: function() {
-    this.getProduct();
-    this.checkInCart();   
+    this.getProduct();    // для детальної сторінки (якщо є хеш)
+    this.checkInCart();   // для детальної сторінки
+    this.getCart();       // завжди оновлюємо кошик при завантаженні
   },
   methods: {
     addItem: function(id) {
@@ -53,10 +69,58 @@ var app = new Vue({
         cart.push(id);
         window.localStorage.setItem('cart', cart.join());
       }
-      this.btnVisible = 1;   
+      this.btnVisible = 1;
+      this.getCart(); // оновлюємо кошик після додавання
     },
     goToCart: function() {
       window.location.href = 'index4.html';
+    },
+    // ========== НОВІ МЕТОДИ ДЛЯ КОШИКА ТА ЗАМОВЛЕННЯ ==========
+    getCart: function() {
+      var storedCart = window.localStorage.getItem('cart');
+      if (storedCart) {
+        var ids = storedCart.split(',');
+        this.cart = [];
+        for (var i = 0; i < ids.length; i++) {
+          var id = parseInt(ids[i]);
+          var found = this.products.find(p => p.id === id);
+          if (found) {
+            this.cart.push(found);
+          }
+        }
+      } else {
+        this.cart = [];
+      }
+    },
+    removeFromCart: function(id) {
+      // видаляємо з localStorage
+      var storedCart = window.localStorage.getItem('cart');
+      if (storedCart) {
+        var ids = storedCart.split(',');
+        var newIds = ids.filter(i => parseInt(i) !== id);
+        if (newIds.length > 0) {
+          window.localStorage.setItem('cart', newIds.join());
+        } else {
+          window.localStorage.removeItem('cart');
+        }
+        // оновлюємо масив cart
+        this.getCart();
+        // якщо ми на детальній сторінці цього товару – оновити btnVisible
+        if (this.product.length > 0 && this.product[0].id === id) {
+          this.checkInCart();
+        }
+      }
+    },
+    makeOrder: function() {
+      // показуємо підтвердження замість форми
+      this.orderSubmitted = true;
+      // очищаємо кошик
+      window.localStorage.removeItem('cart');
+      this.cart = [];
+      // якщо на детальній сторінці – скидаємо btnVisible (але це не обов'язково)
+      if (this.product.length > 0) {
+        this.checkInCart();
+      }
     }
   }
 });

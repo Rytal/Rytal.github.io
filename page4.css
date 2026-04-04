@@ -280,3 +280,52 @@ input[name="code"]{
 .bottom div{
     padding-top: 17px;
 }
+
+/* Стилі для кошика та форми */
+.cart-section {
+    width: 80%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.cart-table th, .cart-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+.cart-table th {
+    background-color: #57984C;
+    color: white;
+}
+.remove-btn {
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.remove-btn:hover {
+    color: darkred;
+}
+.order-form .haupt-block {
+    background-color: #EDEDED;
+    padding-bottom: 30px;
+}
+.order-confirmation {
+    width: 80%;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.order-confirmation ul {
+    text-align: left;
+    display: inline-block;
+    margin: 0 auto;
+}

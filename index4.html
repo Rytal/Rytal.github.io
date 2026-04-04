@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <meta charset="UTF-8">
-    <title>FORM</title> 
+    <title>Кошик та замовлення</title> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">  
@@ -37,50 +37,110 @@
     <div class="test"></div>
 </header>
 <body>
-    <div class="haupt-block">
-        <div class="left-block">
+    <!-- Контейнер Vue -->
+    <div id="article">
+        <!-- Таблиця кошика (показується тільки якщо є товари) -->
+        <div class="cart-section" v-if="cart.length > 0">
+            <div class="zag">Your Cart</div>
+            <div><img src="cr.png" class="cr"></div>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Short description</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in cart" :key="item.id">
+                        <td><img :src="'./img/' + item.image" width="50" height="50" :alt="item.title"></td>
+                        <td>{{ item.title }}</td>
+                        <td>{{ item.short_text }}</td>
+                        <td><span class="remove-btn" @click="removeFromCart(item.id)">✖</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Форма замовлення або повідомлення після відправки -->
+        <div v-if="!orderSubmitted">
             <div class="zag">Contact us</div>
             <div><img src="cr.png" class="cr"></div>
-            <div class="txt">Name<sup>*</sup></div>
-            <input type="text" name="name" />
-            <div class="txt">Company name</div>
-            <input type="text" name="cn" />
-            <div class="txt">Position</div>
-            <input type="text" name="position" />
-            <div class="txt">City</div>
-            <input type="text" name="city" />
-            <div class="txt">Country</div>
-            <input type="text" name="country" />
-            <div class="txt">Telephone</div>
-            <input type="text" name="telephone" />
-            <div class="txt">Email<sup>*</sup></div>
-            <input type="text" name="email" />
+            <form @submit.prevent="makeOrder" class="order-form">
+                <div class="haupt-block">
+                    <div class="left-block">
+                        <div class="txt">Name<sup>*</sup></div>
+                        <input type="text" v-model="contactFields.name" required />
+
+                        <div class="txt">Company name</div>
+                        <input type="text" v-model="contactFields.company" />
+
+                        <div class="txt">Position</div>
+                        <input type="text" v-model="contactFields.position" />
+
+                        <div class="txt">City</div>
+                        <input type="text" v-model="contactFields.city" />
+
+                        <div class="txt">Country</div>
+                        <input type="text" v-model="contactFields.country" />
+
+                        <div class="txt">Telephone</div>
+                        <input type="text" v-model="contactFields.telephone" />
+
+                        <div class="txt">Email<sup>*</sup></div>
+                        <input type="email" v-model="contactFields.email" required />
+                    </div>
+                    <div class="r-block">
+                        <div class="txt">You are a</div>
+                        <select v-model="contactFields.youAre" class="you-are-select">
+                            <option value="" disabled>Select</option>
+                            <option value="seed producer">seed producer</option>
+                            <option value="other">other</option>
+                        </select>
+
+                        <div class="txt">If other, please specify</div>
+                        <input type="text" v-model="contactFields.otherSpecify" />
+
+                        <div class="txt">You are interested in</div>
+                        <textarea v-model="contactFields.interest"></textarea>
+
+                        <div class="txt">Please type this code</div>
+                        <div class="code-container">
+                            <img src="code.png" alt="code icon" class="code-icon">
+                            <input type="text" v-model="contactFields.code" class="code-input">
+                            <button type="submit" class="code-button">Send Message</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="r-block">
-            <div class="txt">You are a</div>
-            <select name="you_are" class="you-are-select">
-                <option value="" disabled selected>Select</option>
-                <option value="option1">seed producer</option>
-                <option value="option2">other</option>
-            </select>
-            <div class="txt">If other, please specify</div>
-            <input type="text" name="if_other" />
-            <div class="txt">You are interested in</div>
-            <textarea name="you_are_int"></textarea>
-            <div class="txt">Please type this code</div>
-            <div class="code-container">
-                <img src="code.png" alt="code icon" class="code-icon">
-                <input type="text" name="code" class="code-input">
-                <button class="code-button">Send Message</button>
-            </div>
+        <div v-else class="order-confirmation">
+            <h2>Дякуємо за замовлення!</h2>
+            <p>Ваші дані:</p>
+            <ul>
+                <li><strong>Name:</strong> {{ contactFields.name }}</li>
+                <li><strong>Email:</strong> {{ contactFields.email }}</li>
+                <li><strong>Company:</strong> {{ contactFields.company }}</li>
+                <li><strong>Position:</strong> {{ contactFields.position }}</li>
+                <li><strong>City:</strong> {{ contactFields.city }}</li>
+                <li><strong>Country:</strong> {{ contactFields.country }}</li>
+                <li><strong>Telephone:</strong> {{ contactFields.telephone }}</li>
+                <li><strong>You are:</strong> {{ contactFields.youAre }}</li>
+                <li><strong>Other specify:</strong> {{ contactFields.otherSpecify }}</li>
+                <li><strong>Interest:</strong> {{ contactFields.interest }}</li>
+                <li><strong>Code:</strong> {{ contactFields.code }}</li>
+            </ul>
+            <p>Ваше замовлення оформлено. Незабаром з вами зв'яжуться.</p>
         </div>
-    </div>
-    <div class="bottom">
-        <div class="address-title">Our Address</div>
-        <div>AGRIDERA Seeds & Agriculture Ltd.</div>
-        <div>P.O Box 103,</div>
-        <div>Gedera 70750 Israel.</div>
-        <div>Telephone: <strong>+972 8 944 9222</strong></div>
+
+        <div class="bottom">
+            <div class="address-title">Our Address</div>
+            <div>AGRIDERA Seeds & Agriculture Ltd.</div>
+            <div>P.O Box 103,</div>
+            <div>Gedera 70750 Israel.</div>
+            <div>Telephone: <strong>+972 8 944 9222</strong></div>
+        </div>
     </div>
 </body>
 <footer>
@@ -108,5 +168,4 @@
 </footer>
 
 <script src="js/main.js"></script>
-
 </html>
