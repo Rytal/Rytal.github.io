@@ -8,10 +8,10 @@ var app = new Vue({
       { id: 4, title: "Джем із ківі", short_text: 'Густий та ароматний', image: 'kiwi4.jpg', desc: "Ідеальний до тостів." },
       { id: 5, title: "Органічний ківі", short_text: 'Вирощений без хімії', image: 'kiwi5.jpg', desc: "Сертифікований еко-продукт." }
     ],
-    product: [],          // для детальної сторінки
-    btnVisible: 0,        // для детальної сторінки
-    cart: [],             // масив товарів у кошику (об'єкти)
-    contactFields: {      // поля форми
+    product: [],
+    btnVisible: 0,
+    cart: [],
+    contactFields: {
       name: '',
       company: '',
       position: '',
@@ -24,12 +24,12 @@ var app = new Vue({
       interest: '',
       code: ''
     },
-    orderSubmitted: false // чи показано підтвердження замовлення
+    orderSubmitted: false
   },
   mounted: function() {
-    this.getProduct();    // для детальної сторінки (якщо є хеш)
-    this.checkInCart();   // для детальної сторінки
-    this.getCart();       // завжди оновлюємо кошик при завантаженні
+    this.getProduct();
+    this.checkInCart();
+    this.getCart();
   },
   methods: {
     addItem: function(id) {
@@ -70,12 +70,11 @@ var app = new Vue({
         window.localStorage.setItem('cart', cart.join());
       }
       this.btnVisible = 1;
-      this.getCart(); // оновлюємо кошик після додавання
+      this.getCart();
     },
     goToCart: function() {
       window.location.href = 'index4.html';
     },
-    // ========== НОВІ МЕТОДИ ДЛЯ КОШИКА ТА ЗАМОВЛЕННЯ ==========
     getCart: function() {
       var storedCart = window.localStorage.getItem('cart');
       if (storedCart) {
@@ -93,7 +92,6 @@ var app = new Vue({
       }
     },
     removeFromCart: function(id) {
-      // видаляємо з localStorage
       var storedCart = window.localStorage.getItem('cart');
       if (storedCart) {
         var ids = storedCart.split(',');
@@ -103,21 +101,16 @@ var app = new Vue({
         } else {
           window.localStorage.removeItem('cart');
         }
-        // оновлюємо масив cart
         this.getCart();
-        // якщо ми на детальній сторінці цього товару – оновити btnVisible
         if (this.product.length > 0 && this.product[0].id === id) {
           this.checkInCart();
         }
       }
     },
     makeOrder: function() {
-      // показуємо підтвердження замість форми
       this.orderSubmitted = true;
-      // очищаємо кошик
       window.localStorage.removeItem('cart');
       this.cart = [];
-      // якщо на детальній сторінці – скидаємо btnVisible (але це не обов'язково)
       if (this.product.length > 0) {
         this.checkInCart();
       }
