@@ -182,3 +182,9 @@
     text-align: center;
     color: #324950;   
 }
+
+.telo1 img {
+    width: 53px;
+    height: 53px;
+    object-fit: contain;
+}

@@ -1,0 +1,560 @@
+.mobile-menu-icon {
+    display: none;         
+}
+#mobile-menu-toggle {
+    display: none;         
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+.resp-img {
+    max-width: 100%;
+    height: auto;
+}
+[class*="telo1box"] img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+@media (max-width: 1600px) {
+    .test {
+        height: auto;
+        min-height: 700px;
+    }
+    .schreibt1 {
+        font-size: 44px;
+    }
+    .top-row {
+        padding-right: 40px;
+        gap: 20px;
+    }
+    .search {
+        gap: 248px;
+        width: 320px;
+    }
+}
+
+@media (max-width: 1480px) {
+    .schreibt1 {
+        font-size: 40px;
+    }
+    .center-group {
+        gap: 40px;
+    }
+    .telo1 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    [class*="telo1box"] {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .test {
+        min-height: 600px;
+    }
+    .schreibt1 {
+        font-size: 36px;
+    }
+    .top-row {
+        padding-right: 30px;
+    }
+    .search {
+        gap: 213px;
+        width: 280px;
+    }
+    .menu {
+        gap: 12px;
+    }
+    .menu div, .menu a {
+        font-size: 16px;
+    }
+    .zav1, .zav2 {
+        font-size: 52px;
+    }
+    .os1, .os2 {
+        font-size: 18px;
+    }
+    .haupt {
+        font-size: 52px;
+    }
+    .bet1zav1, .bet1zav2, .bet1zav3 {
+        font-size: 22px;
+    }
+    .telo3 {
+        height: auto;
+        padding-bottom: 60px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .rigth-block {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+   
+    .mobile-menu-icon {
+        display: inline-block;
+        font-size: 32px;
+        cursor: pointer;
+        color: #324950;
+        background: rgba(255,255,255,0.8);
+        padding: 5px 12px;
+        border-radius: 6px;
+        margin-top: 15px;
+        user-select: none;
+    }
+   
+    .menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #2D3F45;
+        flex-direction: column;
+        gap: 0;
+        width: 220px;
+        border-radius: 8px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        z-index: 1000;
+        margin-top: 10px;
+    }
+    .menu div, .menu a {
+        padding: 12px 20px;
+        text-align: left;
+        color: white !important;
+        border-bottom: 1px solid #57984C;
+        font-size: 16px;
+    }
+    .menu div:last-child, .menu a:last-child {
+        border-bottom: none;
+    }
+   
+    #mobile-menu-toggle:checked + .mobile-menu-icon + .menu {
+        display: flex;
+    }
+    .search {
+        gap: 177px;
+        width: 240px;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    .schreibt1 {
+        font-size: 32px;
+        padding: 0 20px;
+    }
+    .but {
+        width: 140px;
+        height: 48px;
+        font-size: 14px;
+    }
+    .telo1 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        height: auto;
+        padding: 20px;
+    }
+    [class*="telo1box"] {
+        margin-top: 0;
+        font-size: 16px;
+    }
+   
+    .teil1, .teil2 {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+   
+    .teil2 .text12 {
+        order: 1;
+    }
+    .teil2 .video-container {
+        order: 2;
+    }
+    .text1, .text12 {
+        padding-top: 0;
+        text-align: center;
+    }
+    .zav1, .zav2 {
+        font-size: 44px;
+        text-align: center;
+    }
+    .telo3 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        height: auto;
+        padding: 20px;
+    }
+    .haupt {
+        grid-column: 1 / -1;
+        font-size: 44px;
+    }
+    .betref1, .betref2, .betref3 {
+        padding: 0 15px;
+    }
+    .foot1 {
+        grid-auto-flow: row;
+        gap: 20px;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+    .elements {
+        grid-auto-flow: row;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .soz {
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .top-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 0 20px;
+        gap: 10px;
+    }
+    .image {
+        margin: 0 auto;
+        order: 1;
+    }
+    .rigth-block {
+        display: contents;
+    }
+    .mobile-menu-icon {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        order: 2;
+        margin-top: 0;
+    }
+   
+    .search {
+        order: 3;
+        width: 280px;
+        max-width: 280px;
+        margin: 15px auto 5px auto;
+        gap: 210px;
+        font-size: 16px;
+        border-bottom: 2px solid #324950;
+        padding-bottom: 5px;
+    }
+    .menu {
+        top: 50px;
+        right: 10px;
+        margin-top: 0;
+    }
+    .schreibt1 {
+        font-size: 28px;
+    }
+    .telo1 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    [class*="telo1box"] {
+        font-size: 14px;
+    }
+    .telo3 {
+        grid-template-columns: 1fr;
+    }
+    .haupt {
+        font-size: 36px;
+    }
+    .bet1zav1, .bet1zav2, .bet1zav3 {
+        font-size: 20px;
+    }
+    .bet1os1, .bet1os2, .bet1os3 {
+        font-size: 16px;
+    }
+    .video-container {
+        width: 100%;
+        height: auto;
+    }
+    .video-thumbnail {
+        height: auto;
+    }
+    .btn_play {
+        width: 60px;
+        height: 60px;
+    }
+    .zav1, .zav2 {
+        font-size: 36px;
+    }
+    .os1, .os2 {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .schreibt1 {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+    .but {
+        width: 120px;
+        height: 42px;
+        font-size: 12px;
+    }
+    .telo1 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    [class*="telo1box"] {
+        font-size: 13px;
+        gap: 6px;
+    }
+    .back {
+        background-size: contain;
+    }
+    .zav1, .zav2 {
+        font-size: 28px;
+    }
+    .os1, .os2 {
+        font-size: 14px;
+    }
+    .haupt {
+        font-size: 28px;
+    }
+    .bet1zav1, .bet1zav2, .bet1zav3 {
+        font-size: 18px;
+    }
+    .bet1os1, .bet1os2, .bet1os3 {
+        font-size: 14px;
+    }
+    .elements {
+        grid-template-columns: 1fr;
+    }
+    .foot1 {
+        gap: 15px;
+    }
+    .soz img {
+        width: 28px;
+        height: 28px;
+    }
+    .menu {
+        width: 180px;
+    }
+   
+    .search {
+        width: 260px;
+        max-width: 260px;
+        gap: 197px;
+        font-size: 14px;
+        margin: 15px auto;
+    }
+}
+
+
+@media (max-width: 375px) {
+    .schreibt1 {
+        font-size: 20px;
+    }
+    .center-group {
+        gap: 30px;
+    }
+    .telo1 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    [class*="telo1box"] {
+        font-size: 12px;
+    }
+    .search {
+        width: 240px;
+        max-width: 240px;
+        gap: 184px;
+        font-size: 12px;
+    }
+    .mobile-menu-icon {
+        font-size: 28px;
+        padding: 3px 10px;
+    }
+    .zav1, .zav2 {
+        font-size: 24px;
+    }
+    .btn_play {
+        width: 50px;
+        height: 50px;
+    }
+    .text2 {
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 320px) {
+    .schreibt1 {
+        font-size: 18px;
+    }
+    .but {
+        width: 100px;
+        height: 38px;
+        font-size: 11px;
+    }
+    .telo1 {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    [class*="telo1box"] {
+        flex-direction: row;
+        justify-content: center;
+        gap: 12px;
+        font-size: 14px;
+        margin: 5px 0;
+    }
+    [class*="telo1box"] img {
+        width: 40px;
+    }
+    .search {
+        width: 220px;
+        max-width: 220px;
+        gap: 164px;
+    }
+    .menu {
+        width: 160px;
+    }
+    .menu div, .menu a {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+    .zav1, .zav2 {
+        font-size: 20px;
+    }
+    .os1, .os2 {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+    .haupt {
+        font-size: 24px;
+    }
+    .bet1zav1, .bet1zav2, .bet1zav3 {
+        font-size: 16px;
+    }
+    .bet1os1, .bet1os2, .bet1os3 {
+        font-size: 12px;
+    }
+    .elements {
+        gap: 6px;
+    }
+    .el1, .el2, .el3, .el4, .el5, .el6, .el7 {
+        font-size: 12px;
+    }
+    .text2 {
+        font-size: 10px;
+    }
+    .foot1 {
+        padding: 15px;
+    }
+}
+
+
+.telo1 [class*="telo1box"] > div:first-child {
+    width: 53px;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.telo1 [class*="telo1box"] img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+
+@media (max-width: 768px) {
+    .telo1 {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        justify-items: center;
+        text-align: center;
+    }
+}
+@media (max-width: 480px) {
+    .telo1 {
+        gap: 15px;
+    }
+}
+
+
+.im1, .im2 {
+    display: inline-block !important;
+    width: 48px !important;
+    max-width: 48px !important;
+    min-width: 48px !important;
+    height: 6px !important;
+}
+.im1 {
+    width: 48px !important;
+    max-width: 48px !important;
+    min-width: 48px !important;
+}
+
+
+@media (max-width: 768px) {
+    .teil1, .teil2 {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    .teil2 .text12 {
+        order: 1;
+    }
+    .teil2 .video-container {
+        order: 2;
+    }
+    .text1, .text12 {
+        padding-top: 0;
+        text-align: center;
+    }
+    .zav1, .zav2 {
+        text-align: center;
+    }
+    .os1, .os2 {
+        text-align: center;
+    }
+    .im1, .im2 {
+        margin: 25px auto !important;
+    }
+    .teil1 > div:last-child {
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    .video-container {
+        width: auto;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    .teil1 img,
+    .video-container img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        display: block;
+    }
+    .btn_play {
+        width: 60px;
+        height: 60px;
+    }
+}
